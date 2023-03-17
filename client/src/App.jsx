@@ -1,13 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { Card, Grid, CardContent, TextField } from '@mui/material'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-   <>
-   </>
+    <>
+      <Card>
+        <CardContent>
+          <Grid item >
+            <TextField label='First Name' variant='outlined'></TextField>
+            <TextField label='Last Name' variant='outlined'></TextField>
+          </Grid>
+        </CardContent>
+      </Card>
+    </>
   )
 }
 
