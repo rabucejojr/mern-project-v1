@@ -1,10 +1,8 @@
 const express = require('express')
 const dotenv = require('dotenv').config()
 const port = process.env.PORT || 3001
-
+const cors = require('cors')
+const mongoose = require('mongoose')
 
 const app = express()
-
-app.listen(port,()=>{
-    console.log(`server running at port ${port}`)
-})
+mongoose.connect('mongodb://localhost:27017')
