@@ -1,17 +1,35 @@
-import { Card, Grid, CardContent, TextField, Button } from '@mui/material'
+import { Grid, Paper, TextField, Button } from '@mui/material'
 
 const Login = () => {
+  const paperStyle = { padding: 20, height: '40vh', width: 350 }
+
   return (
     <>
-      <Card>
-        <CardContent container spacing={2}>
-          <Grid item>
-            <TextField label='First Name' variant='outlined'></TextField>
-            <TextField label='Last Name' variant='outlined'></TextField>
-            <Button variant='contained'>Send</Button>
+      <Grid sx={{ alignItems: 'center' }}>
+        <Paper elevation={0} sx={paperStyle}>
+          <TextField
+            xs={12}
+            variant='outlined'
+            type='text'
+            label='Username'
+            sx={{ mb: 2 }}
+            fullWidth
+          ></TextField>
+          <TextField
+            xs={12}
+            variant='outlined'
+            type='password'
+            label='Password'
+            sx={{ mb: 2 }}
+            fullWidth
+          ></TextField>
+          <Grid sx={{ align: 'center' }}>
+            <Button variant='contained' color='primary' fullWidth>
+              Login
+            </Button>
           </Grid>
-        </CardContent>
-      </Card>
+        </Paper>
+      </Grid>
     </>
   )
 }
