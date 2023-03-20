@@ -1,14 +1,14 @@
 import { Grid, Paper, TextField, Button } from '@mui/material'
 
 const Login = () => {
-  const paperStyle = { padding: 20, height: '40vh', width: 350 }
-
+  const paperStyle = { padding: 20, height: '40vh', width: 500 }
+  const buttonStyle = { display: 'flex', flexDirection: 'column' }
   return (
     <>
-      <Grid sx={{ alignItems: 'center' }}>
-        <Paper elevation={0} sx={paperStyle}>
+      <Paper elevation={10} sx={paperStyle}>
+        <Grid container spacing={2}>
           <TextField
-            xs={12}
+            xs={6}
             variant='outlined'
             type='text'
             label='Username'
@@ -16,20 +16,35 @@ const Login = () => {
             fullWidth
           ></TextField>
           <TextField
-            xs={12}
+            xs={6}
             variant='outlined'
             type='password'
             label='Password'
             sx={{ mb: 2 }}
             fullWidth
           ></TextField>
-          <Grid sx={{ align: 'center' }}>
-            <Button variant='contained' color='primary' fullWidth>
-              Login
+          <Grid item>
+            <Button variant='contained' color='primary'>
+              Create
             </Button>
           </Grid>
-        </Paper>
-      </Grid>
+          <Grid item>
+            <Button variant='contained' color='primary'>
+              Read
+            </Button>
+            <Grid item>
+              <Button variant='contained' color='primary'>
+                Update
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button variant='contained' color='primary'>
+                Delete
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Paper>
     </>
   )
 }

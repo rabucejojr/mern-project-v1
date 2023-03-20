@@ -1,4 +1,4 @@
-import {Login} from './Components'
+import {Login,Dashboard} from './Components'
 
 function App() {
 
