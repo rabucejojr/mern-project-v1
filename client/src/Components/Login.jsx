@@ -23,26 +23,20 @@ const Login = () => {
             sx={{ mb: 2 }}
             fullWidth
           ></TextField>
-          <Grid item>
-            <Button variant='contained' color='primary'>
-              Create
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button variant='contained' color='primary'>
-              Read
-            </Button>
-            <Grid item>
-              <Button variant='contained' color='primary'>
-                Update
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button variant='contained' color='primary'>
-                Delete
-              </Button>
-            </Grid>
-          </Grid>
+        </Grid>
+        <Grid sx={{ display: 'flex',justifyContent:'space-around'}}>
+          <Button variant='contained' color='primary'>
+            Create
+          </Button>
+          <Button variant='contained' color='primary'>
+            Read
+          </Button>
+          <Button variant='contained' color='primary'>
+            Update
+          </Button>
+          <Button variant='contained' color='primary'>
+            Delete
+          </Button>
         </Grid>
       </Paper>
     </>
