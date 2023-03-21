@@ -14,9 +14,8 @@ const connection = mongoose.connection;
 
 connection.once('open',()=>{console.log('MongoDB connected!')});
 
+app.use('/', routes)
 app.listen(port,()=>{console.log(`Server running in port ${port}`)})
-
-app.use('/', routes);
 
 // FOR CHECKING MONGODB CONNECTION
 // mongoose.connection.on('open', () => {
