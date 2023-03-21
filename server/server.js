@@ -6,8 +6,8 @@ const mongoose = require('mongoose')
 
 const app = express()
 mongoose.connect('mongodb://localhost:27017/mydatabase')
-// const mongoose = require('mongoose')
 
+// FOR CHECKING MONGODB CONNECTION
 mongoose.connection.on('open', () => {
   console.log('MongoDB connected!')
 })
