@@ -2,6 +2,12 @@ import { Grid, Paper, TextField, Button } from '@mui/material'
 
 const Login = () => {
   const paperStyle = { padding: 20, height: '40vh', width: 350 }
+  const handleCreate=(e)=>{
+    e.preventDefault();
+    const data = {user,pass};
+    
+  }
+
   return (
     <>
       <Paper elevation={10} sx={paperStyle}>
