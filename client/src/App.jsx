@@ -1,5 +1,4 @@
-import {Login,Dashboard} from './Components'
-
+import {Login, Dashboard} from './Components'
 function App() {
 
   return (
