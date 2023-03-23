@@ -1,29 +1,17 @@
+// backend imports
 const express = require('express')
 const dotenv = require('dotenv').config()
-const port = process.env.PORT || 3001
-const cors = require('cors')
-const mongoose = require('mongoose')
-const routes = require('./routes')
-
+const port = process.env.PORT 
+//express app
 const app = express()
-app.use(cors());
-app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/mydatabase',{useNewUrlParser:true, useUnifiedTopology:true});
-const connection = mongoose.connection;
+//routes
+app.get('/',(req,res)=>{
+    res.status(200).json({msg:'welcome'})
+})
 
-connection.once('open',()=>{console.log('MongoDB connected!')});
-
-app.use('/', routes)
-app.listen(port,()=>{console.log(`Server running in port ${port}`)})
-
-// FOR CHECKING MONGODB CONNECTION
-// mongoose.connection.on('open', () => {
-//   console.log('MongoDB connected!')
-// })
-
-// mongoose.connection.on('error', (err) => {
-//   console.log(`MongoDB connection error: ${err}`)
-// })
-
+//listen for req
+app.listen(port,()=>{
+    console.log(`running in port ${port}`)
+})
 
