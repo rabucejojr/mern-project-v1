@@ -24,7 +24,7 @@ router.delete('/:id', (req, res) => {
 
 //UPDATE document
 router.patch('/:id', (req, res) => {
-  res.json({ msg: `UPDATE document with id ${id}` })
+  res.json({ msg: `UPDATE document` })
 })
 
 module.exports = router
