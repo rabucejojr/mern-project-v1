@@ -1,11 +1,10 @@
 //backend imports
 const express = require('express')
 const router = express.Router()
+const {uploadDocument,getDocuments}= require('../controllers/documentController')
 
 //GET ALL Documents
-router.get('/', (req, res) => {
-  res.json({ msg: 'GET all documents' })
-})
+router.get('/', getDocuments)
 
 //GET single Document
 router.get('/:id', (req, res) => {
@@ -13,9 +12,7 @@ router.get('/:id', (req, res) => {
 })
 
 //POST document
-router.post('/', (req, res) => {
-  res.json({ msg: `POST new document` })
-})
+router.post('/',uploadDocument)
 
 //DELETE document
 router.delete('/:id', (req, res) => {

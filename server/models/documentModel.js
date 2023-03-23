@@ -10,8 +10,12 @@ const documentSchema = new Schema(
       type: String,
       required: true,
     },
+    desc:{
+      type: String,
+      required: false,
+    }
   },
   { timestamps: true }
 )
-
+module.exports=mongoose.model('Document',documentSchema)
 
