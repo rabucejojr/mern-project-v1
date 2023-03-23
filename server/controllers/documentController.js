@@ -9,6 +9,11 @@ const getDocuments = async (req, res) => {
 //get a single document
 const getDocument = async (req,res) => {
     const {id} = req.params
+    //check if the id entered is valid
+    if(!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error:'Invalid id provided'})
+    }
+
     const document = await Document.findById(id)
     if(!document) {
         return res.status(404).json({error: 'Document not found'})
