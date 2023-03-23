@@ -1,14 +1,20 @@
 const Document = require('../models/documentModel')
 
 //get all documents
-const getDocuments = async(req,res)=>{
-    const documents = await Document.find({}).sort({createAt: -1})
-    res.status(200).json(documents)
+const getDocuments = async (req, res) => {
+  const documents = await Document.find({}).sort({ createAt: -1 })
+  res.status(200).json(documents)
 }
 
-
 //get a single document
-
+const getDocument = async (req,res) => {
+    const {id} = req.params
+    const document = await Document.findById(id)
+    if(!document) {
+        return res.status(404).json({error: 'Document not found'})
+    }
+    res.status(200).json(document)
+}
 // create/upload new document
 const uploadDocument = async (req, res) => {
   const { filename, path, desc } = req.body
@@ -25,4 +31,4 @@ const uploadDocument = async (req, res) => {
 
 //update a document
 
-module.exports = { uploadDocument,getDocuments }
+module.exports = { uploadDocument, getDocuments,getDocument }

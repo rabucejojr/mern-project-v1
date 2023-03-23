@@ -1,15 +1,13 @@
 //backend imports
 const express = require('express')
 const router = express.Router()
-const {uploadDocument,getDocuments}= require('../controllers/documentController')
+const {uploadDocument,getDocuments,getDocument}= require('../controllers/documentController')
 
 //GET ALL Documents
 router.get('/', getDocuments)
 
 //GET single Document
-router.get('/:id', (req, res) => {
-  res.json({ msg: `GET single document` })
-})
+router.get('/:id',getDocument)
 
 //POST document
 router.post('/',uploadDocument)
