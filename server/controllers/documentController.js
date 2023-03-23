@@ -12,7 +12,6 @@ const getDocuments = async(req,res)=>{
 // create/upload new document
 const uploadDocument = async (req, res) => {
   const { filename, path, desc } = req.body
-
   //add document to db
   try {
     const document = await Document.create({ filename, path, desc })
