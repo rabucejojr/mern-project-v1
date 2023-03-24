@@ -1,9 +1,16 @@
-import {Login, Dashboard} from './Components'
-function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
+//PAGES AND COMPONENTS
+import {Home} from './Pages'
+
+function App() {
   return (
     <>
-      <Dashboard/>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+        </Routes>
+      </Router>
     </>
   )
 }
