@@ -1,6 +1,7 @@
 // backend imports
 const express = require('express')
 const dotenv = require('dotenv').config()
+const cors = require('cors')
 const port = process.env.PORT
 const documentRoutes = require('./routes/document')
 const mongoose = require('mongoose')
@@ -13,6 +14,9 @@ app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
 })
+
+//cors
+app.use(cors())
 
 //route use
 app.use('/api/documents', documentRoutes)
