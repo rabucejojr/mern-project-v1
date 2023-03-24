@@ -15,7 +15,7 @@ app.use((req, res, next) => {
   next()
 })
 
-//cors
+//cors; cross-origin resource sharing
 app.use(cors())
 
 //route use
