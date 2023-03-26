@@ -5,7 +5,7 @@ const Home = () => {
   const [documents, setDocuments] = useState(null)
   const fetchDocs = async () => {
     try {
-      const response = await fetch('/api/documents')
+      const response = await fetch('http://localhost:5000/api/documents')
       const json = await response.json()
       setDocuments(json)
       console.log(json)
@@ -23,7 +23,9 @@ const Home = () => {
       <div className='documents'>
         {documents &&
           documents.map((document) => (
-            <p key={document.id}>{document.filename}</p>
+            <h4 key={document.id}>
+              {document.filename} {document.path} {document.desc}
+            </h4>
           ))}
       </div>
     </div>

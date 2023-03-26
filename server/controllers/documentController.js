@@ -59,4 +59,10 @@ const updateDocument = async (req, res) => {
   res.status(200).json(document)
 }
 
-module.exports = { uploadDocument, getDocuments, getDocument, deleteDocument,updateDocument }
+module.exports = {
+  uploadDocument,
+  getDocuments,
+  getDocument,
+  deleteDocument,
+  updateDocument,
+}
