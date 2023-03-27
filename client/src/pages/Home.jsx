@@ -1,6 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 
+//component
+import { DocumentDetails } from '../components/DocumentDetails'
+
 const Home = () => {
   const [documents, setDocuments] = useState(null)
   const fetchDocs = async () => {
@@ -24,9 +27,7 @@ const Home = () => {
       <div className='documents'>
         {documents &&
           documents.map((document) => (
-            <h3 key={document.id}>
-              {document.filename} 
-            </h3>
+            <DocumentDetails key={document._id} document={document}/>
           ))}
       </div>
     </div>
