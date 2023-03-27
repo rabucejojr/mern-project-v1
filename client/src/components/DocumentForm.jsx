@@ -31,7 +31,7 @@ export const DocumentForm = () => {
 
   return (
     <form className='create' onSubmit={handleSubmit}>
-      <h3>Add a document</h3>
+      <h3>Add Document</h3>
       <label>Filename: </label>
       <input
         type='text'
