@@ -35,8 +35,8 @@ header a {
 /* homepage; styles for document details */
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  grid-template-columns: 2fr 1fr;
+  gap:50px;
 }
 .document-details {
   background: #fff;
