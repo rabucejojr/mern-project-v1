@@ -22,10 +22,10 @@ const getDocument = async (req, res) => {
 }
 // CREATE/UPLOAD NEW DOCUMENT
 const uploadDocument = async (req, res) => {
-  const { filename, path, desc } = req.body
+  const { filename, path, desc,date } = req.body
   //add document to db
   try {
-    const document = await Document.create({ filename, path, desc })
+    const document = await Document.create({ filename, path, desc,date })
     res.status(200).json(document)
   } catch (error) {
     res.status(400).json({ error: error.message })
