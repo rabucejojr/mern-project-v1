@@ -2,9 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
+import { DocumentContextProvider } from './context/DocumentContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <DocumentContextProvider>
+      <App />
+    </DocumentContextProvider>
+  </React.StrictMode>
 )
