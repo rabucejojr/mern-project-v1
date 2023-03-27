@@ -19,16 +19,18 @@ const Home = () => {
     fetchDocs();
   }, [])
   return (
+    <>
     <div className='home'>
       <div className='documents'>
         {documents &&
           documents.map((document) => (
-            <h4 key={document.id}>
-              {document.filename} {document.path} {document.desc}
-            </h4>
+            <h3 key={document.id}>
+              {document.filename} 
+            </h3>
           ))}
       </div>
     </div>
+    </>
   )
 }
 
