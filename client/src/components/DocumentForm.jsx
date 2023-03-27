@@ -9,6 +9,7 @@ export const DocumentForm = () => {
   const [path, setPath] = useState('')
   const [desc, setDesc] = useState('')
   const [error, setError] = useState(null)
+  const [emptyFields, setEmptyFields] = useState([])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -23,12 +24,14 @@ export const DocumentForm = () => {
     const json = await response.json()
     if (!response.ok) {
       setError(json.error)
+      setEmptyFields(json.emptyFields)
     }
     if (response.ok) {
       setFilename('')
       setPath('')
       setDesc('')
       setError(null)
+      setError([])
       console.log('new document added', json)
       dispatch({ type: 'CREATE_DOCUMENT', payload: json })
     }
@@ -44,6 +47,7 @@ export const DocumentForm = () => {
           setFilename(e.target.value)
         }}
         value={filename}
+        className={emptyFields.includes('filename') ? 'error' : ' '}
       />
       <label>Path: </label>
       <input
@@ -52,6 +56,7 @@ export const DocumentForm = () => {
           setPath(e.target.value)
         }}
         value={path}
+        className={emptyFields.includes('path') ? 'error' : ' '}
       />
       <label>Description: </label>
       <input
@@ -60,6 +65,7 @@ export const DocumentForm = () => {
           setDesc(e.target.value)
         }}
         value={desc}
+        className={emptyFields.includes('desc') ? 'error' : ' '}
       />
       <button>Add</button>
       {error && <div className='error'>{error}</div>}

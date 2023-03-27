@@ -37,9 +37,7 @@ const uploadDocument = async (req, res) => {
     emptyFields.push('desc')
   }
   if (emptyFields.length > 0) {
-    return res
-      .status(400)
-      .json({ error: 'PLease fill in all fields' }, emptyFields)
+    return res.status(400).json({ error: 'PLease fill in all fields' }, emptyFields)
   }
 
   //add document to db
