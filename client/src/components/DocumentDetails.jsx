@@ -6,7 +6,7 @@ export const DocumentDetails = ({document}) => {
       method: 'DELETE'
     })
     const json = await response.json()
-
+    
   }
   return (
     <div className="document-details">

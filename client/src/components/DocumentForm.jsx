@@ -1,10 +1,10 @@
-import {React, useState} from 'react'
+import { React, useState } from 'react'
 
 //hooks
 import { useDocumentsContext } from '../hooks/useDocumentContext'
 
 export const DocumentForm = () => {
-  const{dispatch}=useDocumentsContext()
+  const { dispatch } = useDocumentsContext()
   const [filename, setFilename] = useState('')
   const [path, setPath] = useState('')
   const [desc, setDesc] = useState('')
@@ -24,13 +24,13 @@ export const DocumentForm = () => {
     if (!response.ok) {
       setError(json.error)
     }
-    if(response.ok){
-        setFilename('')
-        setPath('')
-        setDesc('')
-        setError(null)
-        console.log('new document added', json)
-        dispatch({type:'CREATE_DOCUMENT',payload:json})
+    if (response.ok) {
+      setFilename('')
+      setPath('')
+      setDesc('')
+      setError(null)
+      console.log('new document added', json)
+      dispatch({ type: 'CREATE_DOCUMENT', payload: json })
     }
   }
 
@@ -62,9 +62,7 @@ export const DocumentForm = () => {
         value={desc}
       />
       <button>Add</button>
-      {error &&
-        <div className='error'>{error}</div>
-      }
+      {error && <div className='error'>{error}</div>}
     </form>
   )
 }
