@@ -24,7 +24,7 @@ export const DocumentContextProvider = ({ children }) => {
 
   return (
     <>
-      <DocumentContext.Provider value={{ state, dispatch }}>
+      <DocumentContext.Provider value={{ ...state, dispatch }}>
         {children}
       </DocumentContext.Provider>
     </>

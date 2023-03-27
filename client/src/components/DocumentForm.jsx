@@ -1,6 +1,10 @@
 import {React, useState} from 'react'
 
+//hooks
+import { useDocumentsContext } from '../hooks/useDocumentContext'
+
 export const DocumentForm = () => {
+  const{dispatch}=useDocumentsContext()
   const [filename, setFilename] = useState('')
   const [path, setPath] = useState('')
   const [desc, setDesc] = useState('')
@@ -26,6 +30,7 @@ export const DocumentForm = () => {
         setDesc('')
         setError(null)
         console.log('new document added', json)
+        dispatch({type:'CREATE_DOCUMENT',payload:json})
     }
   }
 
