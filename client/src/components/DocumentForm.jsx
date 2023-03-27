@@ -4,7 +4,7 @@ export const DocumentForm = () => {
   const [filename, setFilename] = useState('')
   const [path, setPath] = useState('')
   const [desc, setDesc] = useState('')
-  const [erro, setError] = useState(null)
+  const [error, setError] = useState(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -57,6 +57,9 @@ export const DocumentForm = () => {
         value={desc}
       />
       <button>Add</button>
+      {error &&
+        <div className='error'>{error}</div>
+      }
     </form>
   )
 }
