@@ -32,7 +32,7 @@ header a {
   margin: 0 auto;
 }
 
-/* homepage */
+/* homepage; styles for document details */
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
