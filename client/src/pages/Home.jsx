@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 //component
 import { DocumentDetails } from '../components/DocumentDetails'
+import { DocumentForm } from '../components/DocumentForm'
 
 const Home = () => {
   const [documents, setDocuments] = useState(null)
@@ -30,6 +31,7 @@ const Home = () => {
             <DocumentDetails key={document._id} document={document}/>
           ))}
       </div>
+      <DocumentForm/>
     </div>
     </>
   )
